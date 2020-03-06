@@ -1,0 +1,17 @@
+Se crearán los directorios con esta estructura:
+
+-edificio_principal
+			|- 2020
+			|	|- enero
+			|	|	|- (todos los archivos de enero)
+			|	|- febrero
+			|		|- edificio_principal-1.febrero.2020
+			|		|- (todos los archivos del mes)
+			|		|- edificio_principal-28.febrero.2020
+			|		|- edificio_principal-completo-febrero.2020
+			|	|- marzo
+			|		|- edificio_principal-1.marzo.2020
+			|- logs.txt
+
+
+** ELIMINAR ESTE ARCHIVO TXT **

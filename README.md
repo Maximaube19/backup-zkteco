@@ -39,17 +39,17 @@ La estructura de directorios es la siguiente:
 
 ```
 <ruta_del_directorio>
-				|- ZKTeco
-					|
-					|- backup_relojes
-					|
-					|- files_backup
-								|
-								|- backup.py
-								|- sinc_zk.py
-								|- (otros archivos)
-								|- backup_zk.bat
-								|- ejecuta_bat_zk.VBScript
+		|- ZKTeco
+			|
+			|- backup_relojes
+			|
+			|- files_backup
+				|
+				|- backup.py
+				|- sinc_zk.py
+				|- (otros archivos)
+				|- backup_zk.bat
+				|- ejecuta_bat_zk.VBScript
 ```
 
 El archivo "config.py" contiene configuraciones básicas sobre ruta de archivos, relojes, etc.
@@ -69,30 +69,30 @@ Ejemplo de la estructura de directorios resultante:
 
 ```
 <ruta_del_directorio>
-				|- ZKTeco
-					|
-					|- backup_relojes
-					|			|- corte
-					|				|- 2020
-					|				|	|- enero
-					|				|	|	|- (todos los archivos de enero)
-					|				|	|- febrero
-					|				|		|- corte-1.febrero.2020
-					|				|		|- (todos los archivos del mes)
-					|				|		|- corte-28.febrero.2020
-					|				|		|- corte-completo-febrero.2020
-					|				|	|- marzo
-					|				|		|- corte-1.marzo.2020
-					|				|- logs.txt
-					|			
-					|
-					|- files_backup
-								|
-								|- backup.py
-								|- sinc_zk.py
-								|- (otros archivos)
-								|- backup_zk.bat
-								|- ejecuta_bat_zk.VBScript
+		|- ZKTeco
+			|
+			|- backup_relojes
+			|		|- edificio_principal
+			|			|- 2020
+			|			|	|- enero
+			|			|	|	|- (todos los archivos de enero)
+			|			|	|- febrero
+			|			|		|- edificio_principal-1.febrero.2020
+			|			|		|- (todos los archivos del mes)
+			|			|		|- edificio_principal-28.febrero.2020
+			|			|		|- edificio_principal-completo-febrero.2020
+			|			|	|- marzo
+			|			|		|- edificio_principal-1.marzo.2020
+			|			|- logs.txt
+			|			
+			|
+			|- files_backup
+				|
+				|- backup.py
+				|- sinc_zk.py
+				|- (otros archivos)
+				|- backup_zk.bat
+				|- ejecuta_bat_zk.VBScript
 ```
 
 Para que se ejecute diariamente y automáticamente se recomienda crear un script que ejecute los archivos backup.py y sinc_kz.py. Luego programar una tarea en el sistema operativo para que se ejecute diariamente. 
@@ -101,7 +101,7 @@ A modo de ejemplo les dejo archivos para Windows backup_zk.bat y sincronizar_dri
 
 ### Sincronizar con Google Drive
 
-**Autenticación**
+* **Autenticación**
 Drive API requiere OAuth2.0 para la autenticación.
 
 Siga estos pasos:
@@ -112,12 +112,12 @@ Siga estos pasos:
 	a. Seleccione 'Tipo de aplicación' para ser aplicación web .
 	b. Ingrese un nombre apropiado.
 	c. Haz clic en "Crear".
-5. Haga clic en 'Descargar JSON' en el lado derecho de ID de cliente para descargar **client_secret_<ID muy larga>.json .**
+5. Haga clic en 'Descargar JSON' en el lado derecho de ID de cliente para descargar **client_secret_ID_muy_larga.json .**
 
 El archivo descargado tiene toda la información de autenticación de su aplicación. **Cambie el nombre del archivo a "client_secrets.json" y colóquelo en su directorio de trabajo.**
 
 
-**Funcionamiento**
+* **Funcionamiento**
 
 En el archivo **sinc_zk.py** verá el siguiente código:
 
@@ -141,10 +141,10 @@ El programa crea en Google Drive un directorio llamado "BackupRelojes", y tendr�
 
 ```
 BackupRelojes
-		|- 2020
-			|- Enero
-			|- Febrero
-			|- Marzo
+	|- 2020
+		|- Enero
+		|- Febrero
+		|- Marzo
 ```
 
 Accede al año y mes actual, obtiene el listado de archivos y los compara con los archivos locales. Si encuentra alguno que no esté sincronizado, lo sube.
