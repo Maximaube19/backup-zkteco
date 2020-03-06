@@ -1,0 +1,9 @@
+
+# archivos Visual Basic Script
+*.VBS
+
+# archivos de configuracion
+/files_backup/client_secrets.json
+/files_backup/mycreds.txt
+
+/files_backup/__pycache__/*
