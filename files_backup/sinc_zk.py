@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from config import *
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
